@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+from issue_tracker.models.projects import Project
 from issue_tracker.models.statuses import Status
 from issue_tracker.models.types import Type
 
@@ -9,7 +10,8 @@ class Task(models.Model):
     summary = models.CharField(max_length=100, verbose_name='Краткое описание')
     description = models.TextField(null=True, blank=True, verbose_name='Полное описание')
     status = models.ForeignKey(Status, related_name='status_task', on_delete=models.RESTRICT, verbose_name='Статус')
-    type = models.ManyToManyField(Type, related_name='type_task', on_delete=models.RESTRICT, verbose_name='Тип')
+    type = models.ManyToManyField(Type, related_name='type_task', verbose_name='Тип')
+    project = models.ForeignKey(Project, on_delete=models.RESTRICT, verbose_name='Проект')
     is_deleted = models.BooleanField(default=False, verbose_name='Удалено')
     created_at = models.DateTimeField(auto_now_add=True, null=True, verbose_name='Дата и время создания')
     updated_at = models.DateTimeField(auto_now=True, null=True, verbose_name='Дата и время изменения')
