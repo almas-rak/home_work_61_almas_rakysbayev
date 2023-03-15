@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block menu %}
+    <li class="nav-item">
+        <a class="nav-link active" href="#">Add Task</a>
+    </li>
+
+{% endblock menu %}
+{% block content %}
+
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col" class="sortable column-summary">
+            <div class="text">Краткое описание</div>
+        </th>
+        <th scope="col">
+            <div class="text">Статус</div>
+        </th>
+        <th scope="col">
+            <div class="text">Тип</div>
+        </th>
+        <th scope="col">
+            <div class="text">Проект</div>
+        </th>
+        <th scope="col">
+            <div class="text">Время и дата создания</div>
+        </th>
+        <th scope="col">
+            <div class="text">Время и дата обновления</div>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if tasks %}
+    {% for task in tasks %}
+        <tr>
+            <td class="field-summary">
+                <a href="{% url 'task_detail' task.pk %}">{{task.summary}}</a>
+            </td>
+            <td class="field-status nowrap">{% for status in task.status.all %}{{ status.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+            <td class="field-type nowrap">{% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+            <td class="field-project nowrap">{{task.project}}</td>
+            <td class="field-created_at nowrap">{{task.created_at}}</td>
+            <td class="field-updated_at nowrap">{{task.updated_at}}</td>
+        </tr>
+    {% endfor %}
+    {% else %}
+    <tr>
+    <td>Список задач пуст</td>
+    </tr>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock content %}
