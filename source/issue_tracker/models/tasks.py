@@ -24,3 +24,7 @@ class Task(models.Model):
 
     def __str__(self):
         return self.summary
+
+    class Meta:
+        verbose_name = 'Задача'
+        verbose_name_plural = 'Задачи'
