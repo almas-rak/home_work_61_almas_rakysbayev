@@ -2,7 +2,10 @@
 {% block title %}Home{% endblock title %}
 {% block menu %}
     <li class="nav-item">
-        <a class="nav-link active" href="{% url 'create_task' %}">Add Task</a>
+        <a class="nav-link active" href="{% url 'create_task' %}">Создать задачу</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'list_projects' %}">Проекты</a>
     </li>
 
 {% endblock menu %}
