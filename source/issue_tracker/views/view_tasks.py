@@ -1,5 +1,7 @@
-from django.views.generic import ListView, CreateView
+from django.urls import reverse
+from django.views.generic import ListView, CreateView, DetailView
 
+from issue_tracker.forms.task_form import TaskForm
 from issue_tracker.models import Task
 
 
@@ -15,4 +17,14 @@ class IndexView(ListView):
 
 
 class CreateTask(CreateView):
-    pass
+    template_name = 'create_task.html'
+    model = Task
+    form_class = TaskForm
+
+    def get_success_url(self):
+        return reverse('detail_task', kwargs={'pk': self.object.pk})
+
+
+class DetailTaskView(DetailView):
+    template_name = 'detail_task.html'
+    model = Task
