@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ project.name }} {% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="card detail-card-custum mb-3 col-10">
+        <div class="row g-0">
+                <div class="card-body">
+                    <div class="">
+                        <h3 class="card-title">{{project.name}}</h3>
+                        <a href="#"><img src="{% static 'icon/pen.png' %}"
+                            style="width:25px; height:20px; margin: 10px;"></a>
+                        <a href="#"><img src="{% static 'icon/remove.png' %}"
+                            style="width:25px; height:20px; margin: 10px;"></a>
+                    </div>
+                    {% if not delete %}
+                        <p class="card-text">Описание:</p>
+                        <p class="card-text">{{ project.description }}</p>
+                    {%endif%}
+                    <p class="card-text"><small class="text-muted">Дата начала проекта: {{project.created_at}}</small></p>
+                    <p class="card-text"><small class="text-muted">Дата окончания проекта: {{project.completed_at}}</small></p>
+                    {% if delete %}
+                        {% include 'partial/confirm_delete.html' %}
+                    {%endif%}
+                    {% if not delete %}
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="sortable column-summary">
+                                        <div class="text">Краткое описание</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="text">Статус</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="text">Тип</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if tasks %}
+                                    {% for task in tasks %}
+                                        <tr>
+                                            <td class="field-summary">
+                                                <a href="{% url 'detail_task' task.pk %}">{{task.summary}}</a>
+                                            </td>
+                                            <td class="field-status nowrap">{{ task.status }}</td>
+                                            <td class="field-type nowrap">{% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+                                        </tr>
+                                    {% endfor %}
+                                {% else %}
+                                    <tr>
+                                    <td>Список задач пуст</td>
+                                    </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    {%endif%}
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
