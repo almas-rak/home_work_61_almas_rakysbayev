@@ -1,1 +1,1 @@
-from .view_tasks import IndexView, CreateTask, DetailTaskView
+from .view_tasks import IndexView, CreateTask, DetailTaskView, DeleteTaskView
