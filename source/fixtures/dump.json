@@ -7,7 +7,7 @@
         "user": 1,
         "content_type": 9,
         "object_id": "1",
-        "object_repr": "РЅРѕРІС‹Р№",
+        "object_repr": "новый",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -20,7 +20,7 @@
         "user": 1,
         "content_type": 9,
         "object_id": "2",
-        "object_repr": "Р’ РїСЂРѕС†РµСЃСЃРµ",
+        "object_repr": "В процессе",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -33,7 +33,7 @@
         "user": 1,
         "content_type": 9,
         "object_id": "2",
-        "object_repr": "РћС€РёР±РєР°",
+        "object_repr": "Ошибка",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
     }
@@ -46,7 +46,7 @@
         "user": 1,
         "content_type": 9,
         "object_id": "1",
-        "object_repr": "Р—Р°РґР°С‡Р°",
+        "object_repr": "Задача",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
     }
@@ -59,7 +59,7 @@
         "user": 1,
         "content_type": 9,
         "object_id": "3",
-        "object_repr": "РЈР»СѓС‡С€РµРЅРёРµ",
+        "object_repr": "Улучшение",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -72,7 +72,7 @@
         "user": 1,
         "content_type": 8,
         "object_id": "1",
-        "object_repr": "РќРѕРІР°СЏ",
+        "object_repr": "Новая",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -85,7 +85,7 @@
         "user": 1,
         "content_type": 8,
         "object_id": "2",
-        "object_repr": "Р’ РїСЂРѕС†РµСЃСЃРµ",
+        "object_repr": "В процессе",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -98,7 +98,7 @@
         "user": 1,
         "content_type": 8,
         "object_id": "3",
-        "object_repr": "Р—Р°РІРµСЂС€РµРЅРѕ",
+        "object_repr": "Завершено",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -114,6 +114,19 @@
         "object_repr": "hw_61",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2023-03-16T01:57:41.191Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "test_1",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0423\\u0434\\u0430\\u043b\\u0435\\u043d\\u043e\"]}}]"
     }
 },
 {
@@ -481,7 +494,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$390000$WnAbynRD8fIg2RqBhIIOwU$qZYKCNPgHMlM4H2VewchMCuHS55OTshnyVbevi9aK7A=",
-        "last_login": "2023-03-15T16:39:19.597Z",
+        "last_login": "2023-03-16T01:57:01.580Z",
         "is_superuser": true,
         "username": "root",
         "first_name": "",
@@ -576,6 +589,14 @@
 },
 {
     "model": "sessions.session",
+    "pk": "6hbctcw5bq8o9sx9kf2o5gr7anyy1n7b",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pAyQAsu3XsGMsyAVA0kpV0Z765NutDtf-_9lwi4rSVsPS1hZnEWSpx-t4j0SHUHfMd6a5JaXZc5yl2RB-3y2jg9L4f7d1Cwl29N7CxbC9pjJgA1EWaG6K0alTMTDeA84hgtGlCUiIakPfhMaDhbr8X7A-lkOC4:1pccrV:Xr2dkg0KDcDKlvkj4_TnpryXy20H2mOYq-Rv6iEoIcs",
+        "expire_date": "2023-03-30T01:57:01.607Z"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "8bdzx3mjzv1tgy5ut25ajtaonrr595gm",
     "fields": {
         "session_data": ".eJxVjEEOwiAQRe_C2pAyQAsu3XsGMsyAVA0kpV0Z765NutDtf-_9lwi4rSVsPS1hZnEWSpx-t4j0SHUHfMd6a5JaXZc5yl2RB-3y2jg9L4f7d1Cwl29N7CxbC9pjJgA1EWaG6K0alTMTDeA84hgtGlCUiIakPfhMaDhbr8X7A-lkOC4:1pcU9n:MXt45mpR5COmtzqYG3R07rbwyXyMgQQ-SEGom-_NQlE",
@@ -589,49 +610,49 @@
         "created_at": "2023-03-15",
         "completed_at": "2023-03-17",
         "name": "hw_61",
-        "description": "Р”РѕР±Р°РІСЊС‚Рµ РїСЂРёР»РѕР¶РµРЅРёРµ accounts РІ РІР°С€ РїСЂРѕРµРєС‚ \"РўСЂРµРєРµСЂ Р·Р°РґР°С‡\" Рё РґРѕР±Р°РІСЊС‚Рµ СЃС‚СЂР°РЅРёС†С‹ РІС…РѕРґР° Рё РІС‹С…РѕРґР°.\r\n\r\nРћРіСЂР°РЅРёС‡СЊС‚Рµ РґРѕСЃС‚СѓРї Рє СЃС‚СЂР°РЅРёС†Р°Рј СЃРѕР·РґР°РЅРёСЏ, СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ Рё СѓРґР°Р»РµРЅРёСЏ РІСЃРµС… С‚РёРїРѕРІ СЂРµСЃСѓСЂСЃРѕРІ - С‚РѕР»СЊРєРѕ РґР»СЏ Р°СѓС‚РµРЅС‚РёС„РёС†РёСЂРѕРІР°РЅРЅС‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№.\r\n\r\n\r\nРќРµ Р·Р°Р±С‹РІР°Р№С‚Рµ РїСЂРѕ РѕР±С‰РёРµ СѓРєР°Р·Р°РЅРёСЏ"
+        "description": "Добавьте приложение accounts в ваш проект \"Трекер задач\" и добавьте страницы входа и выхода.\r\n\r\nОграничьте доступ к страницам создания, редактирования и удаления всех типов ресурсов - только для аутентифицированных пользователей.\r\n\r\n\r\nНе забывайте про общие указания"
     }
 },
 {
     "model": "issue_tracker.status",
     "pk": 1,
     "fields": {
-        "name": "РќРѕРІР°СЏ"
+        "name": "Новая"
     }
 },
 {
     "model": "issue_tracker.status",
     "pk": 2,
     "fields": {
-        "name": "Р’ РїСЂРѕС†РµСЃСЃРµ"
+        "name": "В процессе"
     }
 },
 {
     "model": "issue_tracker.status",
     "pk": 3,
     "fields": {
-        "name": "Р—Р°РІРµСЂС€РµРЅРѕ"
+        "name": "Завершено"
     }
 },
 {
     "model": "issue_tracker.type",
     "pk": 1,
     "fields": {
-        "name": "Р—Р°РґР°С‡Р°"
+        "name": "Задача"
     }
 },
 {
     "model": "issue_tracker.type",
     "pk": 2,
     "fields": {
-        "name": "РћС€РёР±РєР°"
+        "name": "Ошибка"
     }
 },
 {
     "model": "issue_tracker.type",
     "pk": 3,
     "fields": {
-        "name": "РЈР»СѓС‡С€РµРЅРёРµ"
+        "name": "Улучшение"
     }
 },
 {
@@ -640,14 +661,83 @@
     "fields": {
         "summary": "test_1",
         "description": "test_1",
-        "status": 1,
+        "status": 2,
         "project": 1,
         "is_deleted": false,
         "created_at": "2023-03-15T16:54:39.823Z",
-        "updated_at": "2023-03-15T16:54:39.823Z",
-        "deleted_at": null,
+        "updated_at": "2023-03-16T02:34:01.588Z",
+        "deleted_at": "2023-03-16T01:57:26.641Z",
         "type": [
             1,
+            3
+        ]
+    }
+},
+{
+    "model": "issue_tracker.task",
+    "pk": 2,
+    "fields": {
+        "summary": "Task_2",
+        "description": "test_2",
+        "status": 3,
+        "project": 1,
+        "is_deleted": false,
+        "created_at": "2023-03-16T02:16:47.880Z",
+        "updated_at": "2023-03-16T02:33:43.561Z",
+        "deleted_at": null,
+        "type": [
+            3,
+            1
+        ]
+    }
+},
+{
+    "model": "issue_tracker.task",
+    "pk": 3,
+    "fields": {
+        "summary": "тест валидации длины",
+        "description": "test len",
+        "status": 3,
+        "project": 1,
+        "is_deleted": false,
+        "created_at": "2023-03-16T02:32:55.017Z",
+        "updated_at": "2023-03-16T02:33:27.781Z",
+        "deleted_at": null,
+        "type": [
+            3
+        ]
+    }
+},
+{
+    "model": "issue_tracker.task",
+    "pk": 4,
+    "fields": {
+        "summary": "тест удаления",
+        "description": "тест удаления",
+        "status": 1,
+        "project": 1,
+        "is_deleted": true,
+        "created_at": "2023-03-16T03:09:49.125Z",
+        "updated_at": "2023-03-16T03:10:32.163Z",
+        "deleted_at": "2023-03-16T03:10:32.163Z",
+        "type": [
+            3
+        ]
+    }
+},
+{
+    "model": "issue_tracker.task",
+    "pk": 5,
+    "fields": {
+        "summary": "тест удаления",
+        "description": "тест удаления",
+        "status": 1,
+        "project": 1,
+        "is_deleted": true,
+        "created_at": "2023-03-16T03:10:16.579Z",
+        "updated_at": "2023-03-16T03:10:28.558Z",
+        "deleted_at": "2023-03-16T03:10:28.558Z",
+        "type": [
             3
         ]
     }
