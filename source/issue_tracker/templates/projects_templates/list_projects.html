@@ -32,7 +32,7 @@
     {% for project in projects %}
         <tr>
             <td class="field-name">
-                <a href="#">{{project.name}}</a>
+                <a href="{% url 'detail_project' project.pk %}">{{project.name}}</a>
             </td>
             <td class="field-created_at nowrap">{{project.created_at}}</td>
             <td class="field-updated_at nowrap">{{project.completed_at}}</td>
