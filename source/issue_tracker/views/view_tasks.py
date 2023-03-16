@@ -1,5 +1,5 @@
-from django.urls import reverse
-from django.views.generic import ListView, CreateView, DetailView
+from django.urls import reverse, reverse_lazy
+from django.views.generic import ListView, CreateView, DetailView, DeleteView
 
 from issue_tracker.forms.task_form import TaskForm
 from issue_tracker.models import Task
@@ -28,3 +28,10 @@ class CreateTask(CreateView):
 class DetailTaskView(DetailView):
     template_name = 'detail_task.html'
     model = Task
+
+
+class DeleteTaskView(DeleteView):
+    template_name = 'detail_task.html'
+    model = Task
+    extra_context = {'delete': 'delete'}
+    success_url = reverse_lazy('index')
