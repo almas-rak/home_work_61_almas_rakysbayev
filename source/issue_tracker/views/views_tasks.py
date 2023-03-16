@@ -17,7 +17,7 @@ class IndexView(ListView):
 
 
 class CreateTask(CreateView):
-    template_name = 'create_task.html'
+    template_name = 'tasks_templates/create_task.html'
     model = Task
     form_class = TaskForm
 
@@ -26,7 +26,7 @@ class CreateTask(CreateView):
 
 
 class UpdateTaskView(UpdateView):
-    template_name = 'update_task.html'
+    template_name = 'tasks_templates/update_task.html'
     form_class = TaskForm
     model = Task
 
@@ -35,12 +35,12 @@ class UpdateTaskView(UpdateView):
 
 
 class DetailTaskView(DetailView):
-    template_name = 'detail_task.html'
+    template_name = 'tasks_templates/detail_task.html'
     model = Task
 
 
 class DeleteTaskView(DeleteView):
-    template_name = 'detail_task.html'
+    template_name = 'tasks_templates/detail_task.html'
     model = Task
     extra_context = {'delete': 'delete'}
     success_url = reverse_lazy('index')
