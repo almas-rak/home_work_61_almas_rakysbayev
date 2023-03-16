@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Add Product{% endblock title %}
+{% load django_bootstrap5 %}
+{% block content %}
+<form action="{% url 'create_task' %}" method="POST">
+    {% csrf_token %}
+    <div class="table-responsive">
+            {% bootstrap_form form %}
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a class="btn btn-primary" href="{% url 'index' %}" role="button">CANCEL</a>
+</form>
+{% endblock content %}
