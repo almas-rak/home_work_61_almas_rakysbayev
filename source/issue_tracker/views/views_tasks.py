@@ -10,6 +10,8 @@ class IndexView(ListView):
     model = Task
     context_object_name = 'tasks'
     ordering = ('created_at',)
+    paginate_by = 10
+    paginate_orphans = 1
 
     def get_queryset(self):
         queryset = super().get_queryset().exclude(is_deleted=True)

@@ -59,4 +59,7 @@
     {% endif %}
     </tbody>
 </table>
+{% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+        {% endif %}
 {% endblock content %}
