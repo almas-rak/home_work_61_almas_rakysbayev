@@ -1,5 +1,5 @@
 from django.urls import reverse, reverse_lazy
-from django.views.generic import ListView, CreateView, DetailView, DeleteView
+from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 
 from issue_tracker.forms.task_form import TaskForm
 from issue_tracker.models import Task
@@ -20,6 +20,15 @@ class CreateTask(CreateView):
     template_name = 'create_task.html'
     model = Task
     form_class = TaskForm
+
+    def get_success_url(self):
+        return reverse('detail_task', kwargs={'pk': self.object.pk})
+
+
+class UpdateTaskView(UpdateView):
+    template_name = 'update_task.html'
+    form_class = TaskForm
+    model = Task
 
     def get_success_url(self):
         return reverse('detail_task', kwargs={'pk': self.object.pk})
