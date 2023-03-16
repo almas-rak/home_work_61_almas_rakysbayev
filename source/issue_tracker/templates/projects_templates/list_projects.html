@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Проекты{% endblock title %}
+{% block menu %}
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'create_task' %}">Создать задачу</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'list_projects' %}">Проекты</a>
+    </li>
+
+{% endblock menu %}
+{% block content %}
+
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col" class="sortable column-name">
+            <div class="text">Проект</div>
+        </th>
+        <th scope="col">
+            <div class="text">Дата начала проекта</div>
+        </th>
+        <th scope="col">
+            <div class="text">Дата окончания проекта</div>
+        </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% if projects %}
+    {% for project in projects %}
+        <tr>
+            <td class="field-name">
+                <a href="#">{{project.name}}</a>
+            </td>
+            <td class="field-created_at nowrap">{{project.created_at}}</td>
+            <td class="field-updated_at nowrap">{{project.completed_at}}</td>
+        </tr>
+    {% endfor %}
+    {% else %}
+    <tr>
+    <td>Список задач пуст</td>
+    </tr>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock content %}
