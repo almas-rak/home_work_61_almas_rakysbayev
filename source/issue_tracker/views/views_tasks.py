@@ -1,7 +1,7 @@
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 
-from issue_tracker.forms.task_form import TaskForm
+from issue_tracker.forms import TaskForm
 from issue_tracker.models import Task
 
 
