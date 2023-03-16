@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Home{% endblock title %}
+{% block title %}Главная{% endblock title %}
 {% block menu %}
     <li class="nav-item">
         <a class="nav-link active" href="{% url 'create_task' %}">Создать задачу</a>
@@ -47,7 +47,9 @@
             </td>
             <td class="field-status nowrap">{{ task.status }}</td>
             <td class="field-type nowrap">{% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
-            <td class="field-project nowrap">{{ task.project.name }}</td>
+            <td class="field-project nowrap">
+                <a href="{% url 'detail_project' task.project.pk %}">{{task.project.name}}</a>
+            </td>
             <td class="field-created_at nowrap">{{task.created_at}}</td>
             <td class="field-updated_at nowrap">{{task.updated_at}}</td>
         </tr>

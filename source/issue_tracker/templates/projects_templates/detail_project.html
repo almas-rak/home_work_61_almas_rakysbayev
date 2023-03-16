@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} {{ project.name }} {% endblock title %}
+{% block menu %}
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'list_projects' %}">Проекты</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'create_project' %}">Создать проект</a>
+    </li>
+
+{% endblock menu %}
 {% block content %}
 <div class="container">
     <div class="card detail-card-custum mb-3 col-10">
@@ -23,6 +32,8 @@
                         {% include 'partial/confirm_delete.html' %}
                     {%endif%}
                     {% if not delete %}
+                        <p class="card-text"><a href="{% url 'create_project_task' project.pk %}" >Добавить задачу</a></p>
+                        <p class="card-text">Задачи</p>
                         <table class="table table-striped">
                             <thead>
                                 <tr>

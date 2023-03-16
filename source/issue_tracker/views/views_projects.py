@@ -1,7 +1,7 @@
 from django.urls import reverse
 from django.views.generic import ListView, DetailView, CreateView
 
-from issue_tracker.forms import ProjectForm
+from issue_tracker.forms import ProjectForm, TaskForm
 from issue_tracker.models import Project, Task
 
 
@@ -24,7 +24,8 @@ class DetailProjectView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         project = self.get_object()
-        tasks = Task.objects.filter(project=project, is_deleted=False)
+        tasks = Task.objects.filter(project=project, is_deleted=False).select_related('status').prefetch_related(
+            'type')
         context['tasks'] = tasks
         return context
 
@@ -37,3 +38,24 @@ class CreateProjectView(CreateView):
     def get_success_url(self):
         return reverse('detail_project', kwargs={'pk': self.object.pk})
 
+
+class CreateProjectTaskView(CreateView):
+    template_name = 'projects_templates/create_project_task.html'
+    model = Task
+    form_class = TaskForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        project_id = self.kwargs.get('pk')
+        project = Project.objects.get(id=project_id)
+        context['project'] = project
+        return context
+
+    def form_valid(self, form):
+        project_id = self.kwargs.get('pk')
+        project = Project.objects.get(id=project_id)
+        form.instance.project = project
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse('detail_project', kwargs={'pk': self.object.pk})

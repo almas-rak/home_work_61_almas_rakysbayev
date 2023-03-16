@@ -2,23 +2,7 @@ from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 
 from issue_tracker.forms import TaskForm
-from issue_tracker.models import Task, Status, Type, Project
-
-
-def create(request):
-    count = 4
-    status = Status.objects.filter(id=1)
-    status = status[0]
-    t = Type.objects.filter(id=3)
-    project = Project.objects.filter(id=1)
-    project = project[0]
-
-    for i in range(20):
-        count += 1
-        task = Task(summary=f'Тест {count}', description='тест страниц', status=status, project=project)
-        task.save()
-        task.type.set(t)
-    reverse('index')
+from issue_tracker.models import Task
 
 
 class IndexView(ListView):
@@ -30,7 +14,8 @@ class IndexView(ListView):
     paginate_orphans = 1
 
     def get_queryset(self):
-        queryset = super().get_queryset().exclude(is_deleted=True)
+        queryset = super().get_queryset().exclude(is_deleted=True).select_related('status', 'project').prefetch_related(
+            'type')
         return queryset
 
 
