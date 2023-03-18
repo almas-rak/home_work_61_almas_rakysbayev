@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'debug_toolbar',
     'issue_tracker',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'hDWFNt2c',
         'HOST': 'localhost',
-        'PORT': '40005',
+        'PORT': '',
     }
 }
 
@@ -126,6 +127,10 @@ INTERNAL_IPS = [
     "127.0.0.1",
 
 ]
+
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
+LOGIN_URL = 'login'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -191,7 +196,7 @@ BOOTSTRAP5 = {
     'server_side_validation': True,
 
     # Renderers (only set these if you have studied the source and understand the inner workings).
-    'formset_renderers':{
+    'formset_renderers': {
         'default': 'django_bootstrap5.renderers.FormsetRenderer',
     },
     'form_renderers': {

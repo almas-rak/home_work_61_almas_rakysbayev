@@ -17,10 +17,12 @@
                 <div class="card-body">
                     <div class="">
                         <h3 class="card-title">{{project.name}}</h3>
+                        {% if user.is_authenticated %}
                         <a href="#"><img src="{% static 'icon/pen.png' %}"
                             style="width:25px; height:20px; margin: 10px;"></a>
                         <a href="#"><img src="{% static 'icon/remove.png' %}"
                             style="width:25px; height:20px; margin: 10px;"></a>
+                        {% endif %}
                     </div>
                     {% if not delete %}
                         <p class="card-text">Описание:</p>
@@ -32,7 +34,9 @@
                         {% include 'partial/confirm_delete.html' %}
                     {%endif%}
                     {% if not delete %}
+                        {% if user.is_authenticated %}
                         <p class="card-text"><a href="{% url 'create_project_task' project.pk %}" >Добавить задачу</a></p>
+                        {% endif %}
                         <p class="card-text">Задачи</p>
                         <table class="table table-striped">
                             <thead>
@@ -53,7 +57,7 @@
                                     {% for task in tasks %}
                                         <tr>
                                             <td class="field-summary">
-                                                <a href="{% url 'detail_task' task.pk %}">{{task.summary}}</a>
+                                                <a href="{% url 'DetailProjectTaskView' task.pk project.pk  %}">{{task.summary}}</a>
                                             </td>
                                             <td class="field-status nowrap">{{ task.status }}</td>
                                             <td class="field-type nowrap">{% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>

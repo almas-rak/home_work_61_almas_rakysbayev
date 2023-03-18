@@ -2,14 +2,16 @@
 {% load static %}
 {% block title %}Главная{% endblock title %}
 {% block menu %}
+    {% if user.is_authenticated %}
     <li class="nav-item">
         <a class="nav-link active" href="{% url 'create_task' %}">Создать задачу</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" href="{% url 'list_projects' %}">Проекты</a>
-    </li>
-    <li class="nav-item">
         <a class="nav-link active" href="{% url 'create_project' %}">Создать проект</a>
+    </li>
+    {% endif %}
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'list_projects' %}">Проекты</a>
     </li>
 
 {% endblock menu %}
@@ -53,6 +55,7 @@
             </td>
             <td class="field-created_at nowrap">{{task.created_at}}</td>
             <td class="field-updated_at nowrap">{{task.updated_at}}</td>
+            {% if user.is_authenticated %}
             <td class="field-updated_at nowrap">
                 <a href="{% url 'update_task' task.pk %}"><img src="{% static 'icon/pen.png' %}"
                             style="width:15px; height:15px; margin: 10px;"></a>
@@ -61,6 +64,7 @@
                 <a href="{% url 'delete_task' task.pk %}"><img src="{% static 'icon/remove.png' %}"
                             style="width:15px; height:15px; margin: 10px;"></a>
             </td>
+            {% endif %}
 
 
         </tr>

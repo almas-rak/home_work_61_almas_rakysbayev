@@ -21,11 +21,12 @@ from app import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include('issue_tracker.urls')),
+    path('auth/', include('accounts.urls')),
 
 ]
 if settings.DEBUG:
     import debug_toolbar
-    urlpatterns = [
-        path('__debug__/', include(debug_toolbar.urls)),
-                  ] + urlpatterns
 
+    urlpatterns = [
+                      path('__debug__/', include(debug_toolbar.urls)),
+                  ] + urlpatterns

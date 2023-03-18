@@ -26,9 +26,21 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Главная</a>
                 </li>
                 {% block menu %}{% endblock menu %}
+                {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link active" href="/admin">Администрирование Django</a>
                 </li>
+                <li class="nav-item">
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" class="nav-link active" aria-current="page" value="Выйти">
+                    </form>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'login' %}" class="nav-link active" aria-current="page">Войти</a>
+                </li>
+                {% endif %}
 
             </ul>
         </div>
