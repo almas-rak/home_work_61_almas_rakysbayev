@@ -55,16 +55,6 @@
             </td>
             <td class="field-created_at nowrap">{{task.created_at}}</td>
             <td class="field-updated_at nowrap">{{task.updated_at}}</td>
-            {% if user.is_authenticated %}
-            <td class="field-updated_at nowrap">
-                <a href="{% url 'update_task' task.pk %}"><img src="{% static 'icon/pen.png' %}"
-                            style="width:15px; height:15px; margin: 10px;"></a>
-            </td>
-            <td class="field-updated_at nowrap">
-                <a href="{% url 'delete_task' task.pk %}"><img src="{% static 'icon/remove.png' %}"
-                            style="width:15px; height:15px; margin: 10px;"></a>
-            </td>
-            {% endif %}
 
 
         </tr>
