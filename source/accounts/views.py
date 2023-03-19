@@ -27,7 +27,6 @@ class LoginView(TemplateView):
             messages.warning(request, "Пользователь не найден")
             return redirect('index')
         login(request, user)
-        messages.success(request, 'Добро пожаловать')
         next = request.GET.get('next')
         if next:
             return redirect(next)

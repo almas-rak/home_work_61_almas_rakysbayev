@@ -37,6 +37,7 @@
                         {% if user.is_authenticated %}
                         <p class="card-text"><a href="{% url 'create_project_task' project.pk %}" >Добавить задачу</a></p>
                         {% endif %}
+                        <p class="card-text">Владелец: {{project.owner}}</p>
                         <p class="card-text">Задачи</p>
                         <table class="table table-striped">
                             <thead>
@@ -57,7 +58,7 @@
                                     {% for task in tasks %}
                                         <tr>
                                             <td class="field-summary">
-                                                <a href="{% url 'DetailProjectTaskView' task.pk project.pk  %}">{{task.summary}}</a>
+                                                <a href="{% url 'detail_task' task.pk   %}">{{task.summary}}</a>
                                             </td>
                                             <td class="field-status nowrap">{{ task.status }}</td>
                                             <td class="field-type nowrap">{% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>

@@ -67,5 +67,10 @@ class CreateProjectTaskView(CreateView):
         return reverse('detail_project', kwargs={'pk': pk})
 
 
+class DetailProjectTaskView(DetailView):
+    template_name = 'tasks_templates/detail_task.html'
+    model = Task
+
+
 class DeleteProjectTaskView(DeleteView):
     pass

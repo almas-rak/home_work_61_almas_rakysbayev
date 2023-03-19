@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 
@@ -6,6 +7,8 @@ class Project(models.Model):
     created_at = models.DateField(verbose_name='Дата создания')
     completed_at = models.DateField(null=True, blank=True, verbose_name='Дата окончания')
     name = models.CharField(max_length=50, verbose_name='Название')
+    user = models.ManyToManyField(User, null=True, blank=True, related_name='project_users', verbose_name='пользователи')
+    owner = models.ForeignKey(User, on_delete=models.RESTRICT, verbose_name='владелец')
     description = models.TextField(verbose_name='описание')
     is_deleted = models.BooleanField(default=False, verbose_name='удалено')
     deleted_at = models.DateTimeField(null=True, blank=True, verbose_name='Дата и время удаления')

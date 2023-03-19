@@ -13,4 +13,6 @@ urlpatterns = [
     path("detail/projects/<int:pk>", DetailProjectView.as_view(), name='detail_project'),
     path("create/project", CreateProjectView.as_view(), name='create_project'),
     path("create/project/task/<int:pk>", CreateProjectTaskView.as_view(), name='create_project_task'),
+    path("detail/project/task/<int:task>/<int:project>", CreateProjectTaskView.as_view(),
+         name='detail_project_task_view'),
 ]
