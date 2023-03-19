@@ -46,4 +46,5 @@ class DeleteTaskView(DeleteView):
     template_name = 'tasks_templates/detail_task.html'
     model = Task
     extra_context = {'delete': 'delete'}
+
     success_url = reverse_lazy('index')
