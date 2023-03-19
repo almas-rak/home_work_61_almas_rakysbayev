@@ -767,7 +767,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$390000$WnAbynRD8fIg2RqBhIIOwU$qZYKCNPgHMlM4H2VewchMCuHS55OTshnyVbevi9aK7A=",
-    "last_login": "2023-03-15T16:39:19.597Z",
+    "last_login": "2023-03-19T07:49:11.735Z",
     "is_superuser": true,
     "username": "root",
     "first_name": "",
@@ -862,10 +862,18 @@
 },
 {
   "model": "sessions.session",
-  "pk": "8bdzx3mjzv1tgy5ut25ajtaonrr595gm",
+  "pk": "bm65gizdh6ceje2yaskb02laqcn987ku",
   "fields": {
-    "session_data": ".eJxVjEEOwiAQRe_C2pAyQAsu3XsGMsyAVA0kpV0Z765NutDtf-_9lwi4rSVsPS1hZnEWSpx-t4j0SHUHfMd6a5JaXZc5yl2RB-3y2jg9L4f7d1Cwl29N7CxbC9pjJgA1EWaG6K0alTMTDeA84hgtGlCUiIakPfhMaDhbr8X7A-lkOC4:1pcU9n:MXt45mpR5COmtzqYG3R07rbwyXyMgQQ-SEGom-_NQlE",
-    "expire_date": "2023-03-29T16:39:19.631Z"
+    "session_data": ".eJxVjEEOwiAQRe_C2pAyQAsu3XsGMsyAVA0kpV0Z765NutDtf-_9lwi4rSVsPS1hZnEWSpx-t4j0SHUHfMd6a5JaXZc5yl2RB-3y2jg9L4f7d1Cwl29N7CxbC9pjJgA1EWaG6K0alTMTDeA84hgtGlCUiIakPfhMaDhbr8X7A-lkOC4:1pdP0i:-1HHUbPcFg4WSJt9IEDalBkIIWKWC3bzpjjjdsV1QVI",
+    "expire_date": "2023-04-01T05:21:44.783Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "tel9nxap7jiixtx9emu07dqfchqa1822",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pAyQAsu3XsGMsyAVA0kpV0Z765NutDtf-_9lwi4rSVsPS1hZnEWSpx-t4j0SHUHfMd6a5JaXZc5yl2RB-3y2jg9L4f7d1Cwl29N7CxbC9pjJgA1EWaG6K0alTMTDeA84hgtGlCUiIakPfhMaDhbr8X7A-lkOC4:1pd7xM:DGsL9I0ipL6AS2Y29Wsu6qzgEqUvM3NdpJrPeGBWHc4",
+    "expire_date": "2023-03-31T11:09:08.477Z"
   }
 },
 {
@@ -875,9 +883,11 @@
     "created_at": "2023-03-15",
     "completed_at": "2023-03-17",
     "name": "hw_61",
+    "owner": 1,
     "description": "Добавьте приложение accounts в ваш проект \"Трекер задач\" и добавьте страницы входа и выхода.\r\n\r\nОграничьте доступ к страницам создания, редактирования и удаления всех типов ресурсов - только для аутентифицированных пользователей.\r\n\r\n\r\nНе забывайте про общие указания",
     "is_deleted": false,
-    "deleted_at": null
+    "deleted_at": null,
+    "user": []
   }
 },
 {
@@ -887,9 +897,11 @@
     "created_at": "2023-03-16",
     "completed_at": "2023-03-16",
     "name": "Тест_1",
+    "owner": 1,
     "description": "Тест отображения привязанных задач",
     "is_deleted": false,
-    "deleted_at": null
+    "deleted_at": null,
+    "user": []
   }
 },
 {
@@ -1183,7 +1195,7 @@
     "project": 1,
     "is_deleted": false,
     "created_at": "2023-03-16T17:44:17.801Z",
-    "updated_at": "2023-03-16T17:44:17.801Z",
+    "updated_at": "2023-03-18T05:22:12.845Z",
     "deleted_at": null,
     "type": [
       3
@@ -1320,6 +1332,23 @@
     "is_deleted": false,
     "created_at": "2023-03-16T17:44:17.823Z",
     "updated_at": "2023-03-16T17:44:17.823Z",
+    "deleted_at": null,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "issue_tracker.task",
+  "pk": 45,
+  "fields": {
+    "summary": "qwerqwer",
+    "description": "qwerqwerwqer",
+    "status": 1,
+    "project": 1,
+    "is_deleted": false,
+    "created_at": "2023-03-16T18:24:06.260Z",
+    "updated_at": "2023-03-16T18:24:06.260Z",
     "deleted_at": null,
     "type": [
       3
